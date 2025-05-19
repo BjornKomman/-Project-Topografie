@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.cs">
+    <link rel="stylesheet" href="style.css">
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <!-- Turf.js -->
     <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
     <title>Document</title>
-    <style>
-        #map {
-        height: 90vh;
-        width: 100vh;
-        }
-    </style>
 </head>
 <header>
-    <p1>Menu</p1>
+    <div class="header">
+        <button class="HeaderButton">User</button>
+    </div>
 </header>
 <body>
-  <div id="map"></div>
+    <div class="MEGA" style="column-count: 2;">
+    <div id="map"></div>
+    <div class="yes">Country you clicked:</div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
