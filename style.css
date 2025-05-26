@@ -1,0 +1,32 @@
+#map 
+{
+    height: 90vh;
+    width: 100vh;
+}
+
+.yes
+{
+    font-size: 100px;
+}
+
+.header
+{
+    background-color: aqua;
+    width: auto;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+}
+
+.HeaderButton
+{
+    background-color: #04AA6D;
+    color: white;
+    padding: 15px 32px;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
