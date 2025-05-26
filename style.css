@@ -4,7 +4,12 @@
     width: 100vh;
 }
 
-.yes
+.question
+{
+    font-size: 100px;
+}
+
+.answer
 {
     font-size: 100px;
 }
