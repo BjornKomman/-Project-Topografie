@@ -27,15 +27,16 @@ fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/coun
       },
       onEachFeature: function (feature, layer) {
         layer.on('click', function () {
-          console.log("Clicked feature properties:", feature.properties);
-
           const name =
-            feature.properties.ADMIN ||
-            feature.properties.NAME ||
             feature.properties.name ||
             "Unknown Country";
 
-          alert("You clicked on: " + name);
+          const infoBox = document.getElementsByClassName("yes")[0];
+          if (infoBox) {
+            infoBox.innerHTML = "Country you clicked: " + name;
+          } else {
+            console.warn('Element with class "yes" not found.');
+          }
         });
       }
     }).addTo(map);
