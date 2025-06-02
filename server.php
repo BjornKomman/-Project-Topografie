@@ -48,5 +48,4 @@ if (isset($_POST['save'])){
 
     $leerling->saveScore($score, $firstName, $lastName);
         header('location: register.php');
-
 };
