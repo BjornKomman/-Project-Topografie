@@ -32,12 +32,30 @@ class leerlingen {
         $this->db->query($query);
     }
 
-    public function updateLeerling($id, $firstName, $lastName, $email, $password, $class){
-        $query = "UPDATE `leerlingen` SET `firstName`='$firstName',`lastName`='$lastName',`email`='$email',`password`='$password', `class`='$class' WHERE `id` = $id";
-        $this->db->query($query);
-    }
+    // public function updateLeerling($id, $firstName, $lastName, $email, $password, $class){
+    //     $query = "UPDATE `leerlingen` SET `firstName`='$firstName',`lastName`='$lastName',`email`='$email',`password`='$password', `class`='$class' WHERE `id` = $id";
+    //     $this->db->query($query);
+    // }
     public function deleteLeerling($id) {
         $query = "DELETE FROM `leerlingen` WHERE `id`=$id;";
         $this->db->query($query);
+    }
+
+    public function getScore($id){
+        $query = "SELECT * FROM `score` WHERE `leerling_id`='$id'";
+        $result = $this->db->query($query);
+        $scores = array();
+        while ($row = $result->fetch_assoc()) {
+            $scores[] = $row;
+        }
+        return $scores;
+    }
+    // public function
+
+    public function saveScore($score, $firstName, $lastName){
+        $query = "SELECT `id` FROM `leerlingen` WHERE `firstName` = '$firstName' AND `lastName` = '$lastName'";
+        $id = $this->db->query($query);
+         $query = "INSERT INTO `score`(`leerling_id`, `score`) VALUES ($id, $score)";
+         $this->db->query($query);
     }
 }
