@@ -4,6 +4,17 @@
     width: 100vh;
 }
 
+.MEGA {
+    display: flex;
+    justify-content: space-around;
+}
+
+.column2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .question
 {
     font-size: 100px;

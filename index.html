@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <!-- Turf.js -->
     <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
-    <title>Document</title>
+    <title>Topo App</title>
 </head>
 <header>
     <div class="header">
@@ -17,13 +18,35 @@
         <a href="register.php"><button class="HeaderButton">register</button></a>
     </div>
 </header>
+
 <body>
-    <div class="MEGA" style="column-count: 2;">
-    <div id="map"></div>
-    <div class="question"></div>
-    <div class="answer"></div>
+    <div class="MEGA">
+        <div class="column1">
+            <div id="map"></div>
+        </div>
+        <div class="column2">
+            <div>
+                <div class="question"></div>
+            </div>
+            <div>
+                <div class="answer"></div>
+                <div>
+                    <form method="POST" action="server.php">
+                        <textarea class="score" type="text" name="score" readonly>
+
+                        </textarea>
+                        <br><br>
+                        <input class="firstname" type="text" name="firstname" placeholder="Enter your fist name">
+                        <input class="lastname" type="text" name="lastname" placeholder="Enter your last name">
+                        <br>
+                        <button type="submit" name="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="app.js"></script>
-    
+
 </body>
+
 </html>
