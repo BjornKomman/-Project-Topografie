@@ -25,6 +25,14 @@
     font-size: 100px;
 }
 
+.score {
+    border: none;
+    resize: none;
+    font-size: 100px;
+    width: 100%;
+    color:#5eeb62
+}
+
 .header
 {
     background-color: aqua;

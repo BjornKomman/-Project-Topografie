@@ -1,10 +1,10 @@
 const map = L.map('map', {
   zoomControl: false,
-  scrollWheelZoom: false,
+  scrollWheelZoom: true,
   doubleClickZoom: false,
   boxZoom: false,
   touchZoom: false,
-  dragging: false
+  dragging: true
 });
 
 const europeBounds = [
@@ -56,18 +56,32 @@ fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/coun
                   answerBox.style.color = 'green';
                   answerBox.textContent = "Correct!";
                   score++;
+
+                  setTimeout(() => {
+                    answerBox.textContent = '';
+                  }, 700)
+
                 } else {
                   answerBox.style.color = 'red';
                   answerBox.textContent = "Wrong!";
+
+                  setTimeout(() => {
+                    answerBox.textContent = '';
+                  }, 700)
                 }
+
                 currentQuestion++;
                 if (currentQuestion < selectedCountries.length) {
-                  infoBox.textContent = "Click on: " + selectedCountries[currentQuestion];
+                  setTimeout(() => {
+                    infoBox.textContent = "Click on: " + selectedCountries[currentQuestion];
+                  }, 700)
                 } else {
-                  infoBox.textContent = "Quiz finished!";
-                  answerBox.style.color = 'black';
-                  answerBox.textContent = 'Uw score van 0-100:';
-                  scoreBox.textContent = score * 10;
+                  setTimeout(() => {
+                    infoBox.textContent = "Quiz finished!";
+                    answerBox.style.color = 'black';
+                    answerBox.textContent = 'Uw score van 0-100:';
+                    scoreBox.textContent = score * 10;
+                  }, 700);
                 }
               }
             });
