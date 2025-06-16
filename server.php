@@ -41,11 +41,11 @@ if (isset($_GET['del'])) {
     header('location: register.php');
 }
 
-if (isset($_POST['save'])){
+if (isset($_POST['saveScore'])){
     $score = $_POST['score'];
-    $firstName = $_POST['fistname'];
+    $firstName = $_POST['firstname'];
     $lastName = $_POST['lastname'];
 
-    $leerling->saveScore($score, $firstName, $lastName);
+    $leerling->saveScore(intval($score), $firstName, $lastName);
         header('location: register.php');
 };
