@@ -4,14 +4,37 @@
     width: 100vh;
 }
 
+.MEGA {
+    display: flex;
+    justify-content: space-around;
+}
+
+.column2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .question
 {
     font-size: 100px;
 }
 
+.counter {
+    font-size: 50px;
+}
+
 .answer
 {
     font-size: 100px;
+}
+
+.score {
+    border: none;
+    resize: none;
+    font-size: 100px;
+    width: 100%;
+    color:#5eeb62
 }
 
 .header
