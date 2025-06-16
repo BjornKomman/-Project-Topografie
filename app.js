@@ -34,8 +34,6 @@ fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/coun
           selectedCountries.push(randCountry);
         }
 
-        console.log(selectedCountries);
-
         const infoBox = document.querySelector(".question");
         infoBox.textContent = "Click on: " + selectedCountries[currentQuestion];
 
@@ -69,7 +67,7 @@ fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/coun
                     answerBox.textContent = '';
                   }, 700)
                 }
-
+                
                 currentQuestion++;
                 if (currentQuestion < selectedCountries.length) {
                   setTimeout(() => {
