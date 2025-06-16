@@ -8,20 +8,21 @@ $email = '';
 $password = '';
 $class = '';
 
-if (isset($_GET['edit'])) {
-    $id = $_GET['edit'];
-    $update = true;
-    $leerling = $leerlingen->getLeerlingById($id);
+// if (isset($_GET['edit'])) {
+//     $id = $_GET['edit'];
+//     $update = true;
+//     $leerling = $leerlingen->getLeerlingById($id);
 
-    if ($leerling) {
-        $firstName = $leerling['firstName'];
-        $lastName = $leerling['lastName'];
-        $email = $leerling['email'];
-        $password = $leerling['password'];
-        $class = $leerling['class'];
-    }
-}
+//     if ($leerling) {
+//         $firstName = $leerling['firstName'];
+//         $lastName = $leerling['lastName'];
+//         $email = $leerling['email'];
+//         $password = $leerling['password'];
+//         $class = $leerling['class'];
+//     }
+// }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -38,6 +39,22 @@ if (isset($_GET['edit'])) {
         <a href="index.html"><button class="HeaderButton">spel</button></a>
         <a href="register.php"><button class="HeaderButton">register</button></a>
     </div>
+    <br>
+    <?php
+        if (isset($_GET['score'])){
+            $allScores = $leerlingen->getScore($_GET['score']);
+
+            foreach ($allScores as $score){
+                echo $score['score'] . " punten";
+                echo "<br>";
+                
+
+            
+            }
+        }
+?>
+    <br>
+    <hr>
     <?php $allLeerlingen = $leerlingen->getAllLeerlingen();
         foreach ($allLeerlingen as $leerling) { ?>
             <tr>
@@ -55,7 +72,7 @@ if (isset($_GET['edit'])) {
                 </td>
                 <td>
 
-                    <a href="index.php?edit=<?php echo $leerling['id']; ?>" class="edit_btn">Edit</a>
+                    <a href="register.php?score=<?php echo $leerling['id']; ?>" class="score_btn">score</a>
                 </td>
                 <td>
                     <a href="server.php?del=<?php echo $leerling['id']; ?>" class="del_btn">Delete</a>

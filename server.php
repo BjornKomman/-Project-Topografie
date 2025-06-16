@@ -40,3 +40,12 @@ if (isset($_GET['del'])) {
     // $_SESSION['message'] = "User deleted!";
     header('location: register.php');
 }
+
+if (isset($_POST['save'])){
+    $score = $_POST['score'];
+    $firstName = $_POST['fistname'];
+    $lastName = $_POST['lastname'];
+
+    $leerling->saveScore($score, $firstName, $lastName);
+        header('location: register.php');
+};
