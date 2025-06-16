@@ -54,8 +54,13 @@ class leerlingen {
 
     public function saveScore($score, $firstName, $lastName){
         $query = "SELECT `id` FROM `leerlingen` WHERE `firstName` = '$firstName' AND `lastName` = '$lastName'";
-        $id = $this->db->query($query);
-         $query = "INSERT INTO `score`(`leerling_id`, `score`) VALUES ($id, $score)";
-         $this->db->query($query);
+        $result = $this->db->query($query);
+        if ($result && $row = $result->fetch_assoc()) {
+            $id = $row['id'];
+            $query = "INSERT INTO `score`(`leerling_id`, `score`) VALUES ($id, $score)";
+            $this->db->query($query);
+        } else {
+            echo("Leerling niet gevonden");
+        }
     }
 }
